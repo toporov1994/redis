@@ -1,0 +1,19 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: redis-apps
+  namespace: argo-system
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/toporov1994/redis.git
+    targetRevision: HEAD
+    path: ".app"
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: argo-system
+  syncPolicy:
+    automated:
+      allowEmpty: true
+      selfHeal: true
+      prune: true
