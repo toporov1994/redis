@@ -8,7 +8,7 @@ spec:
   source:
     repoURL: https://github.com/toporov1994/redis.git
     targetRevision: HEAD
-    path: ".app"
+    path: "app"
   destination:
     server: https://kubernetes.default.svc
     namespace: argo-system
